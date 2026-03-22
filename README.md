@@ -84,7 +84,7 @@ Update config.py to set your preferred stocks, indices, or data parameters.
 
 Notes & Best Practices
 
-Data Blocking: NSE may block frequent requests. Use throttling or caching to avoid IP bans.
+Data Blocking: NSE may block frequent requests. Use throttling or caching to avoid IP bans.(quarter of code dosent work if this happens pls make sure it dosent happen)
 
 Historical Data: HMM requires sufficient historical data for reliable regime detection.
 
@@ -94,9 +94,10 @@ Modular Pipeline: You can run individual modules independently to test or tweak 
 
 Logging: All modules have basic logging enabled for debugging and performance monitoring.
 
+If hmmlearn library doesnt work on vscode try installing anaconda or miniconda and try running the prompt on the anaconda prompt
 
+this version is still in alpha so dont expect best of the best result
 
----
 
 Contributing
 
@@ -106,7 +107,7 @@ Fork the repository
 
 Create a feature branch
 
-Submit a pull request with detailed explanation
+Submit a pull request with detailed explanation(even though the project is public....rules pa thambi RULES)
 
 
 
