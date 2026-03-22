@@ -104,7 +104,7 @@ run the main pipeline only for the results and enter the output in the terminal
 
 it only runs nifty 50 stocks and indices
  
-also there is a dormant file app.py which orhinally meant to create ui dashboard for the anush model....i had to scrape it due to a problem of integrating the markov_model.py file into streamlit which ran me into a barrage of problems...if you want to try to fix it...install streamlit libraries and try to integrate it
+also there is a dormant file app.py which orginally meant to create ui dashboard for the anush model....i had to scrape it due to a problem of integrating the markov_model.py file into streamlit which ran me into a barrage of problems...if you want to try to fix it...install streamlit libraries and try to integrate it
 
 also i should update the requirement txt file......(even though i named most of the libraries)
 
