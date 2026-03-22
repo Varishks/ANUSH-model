@@ -49,7 +49,7 @@ venv\Scripts\activate      # Windows
 pip install --upgrade pip setuptools wheel
 pip install -r requirements.txt
 
-Key libraries: numpy, pandas, scipy, statsmodels, hmmlearn, scikit-learn, requests.
+Key libraries: numpy, pandas, scipy, statsmodels, hmmlearn, scikit-learn, arch, scipy, requests.
 
 
 ---
@@ -98,6 +98,17 @@ If hmmlearn library doesnt work on vscode try installing anaconda or miniconda a
 
 this version is still in alpha so dont expect best of the best result
 
+use python 3.11 and vscode and anaconda for best result
+
+run the main pipeline only for the results and enter the output in the terminal
+
+it only runs nifty 50 stocks and indices
+ 
+also there is a dormant file app.py which orhinally meant to create ui dashboard for the anush model....i had to scrape it due to a problem of integrating the markov_model.py file into streamlit which ran me into a barrage of problems...if you want to try to fix it...install streamlit libraries and try to integrate it
+
+also i should update the requirement txt file......(even though i named most of the libraries)
+
+also a huge thanks to veritasium for the inspiration on the option pricing video...be sure to check it out
 
 Contributing
 
