@@ -1,4 +1,3 @@
-
 from arch import arch_model
 import numpy as np
 
@@ -12,17 +11,13 @@ def forecast_volatility(returns):
     if len(returns) < 50:
         raise ValueError("Not enough data for GARCH")
 
-    # 🔥 scale for stability
+    # Scale for numerical stability
     scaled_returns = returns * 100
 
     model = arch_model(scaled_returns, vol='Garch', p=1, q=1)
     result = model.fit(disp="off")
 
-    forecast = result.forecast(horizon=1)
+    # Conditional volatility series
+    cond_vol = result.conditional_volatility / 100
 
-    variance = forecast.variance.iloc[-1, 0]
-
-    # 🔥 rescale back
-    volatility = np.sqrt(variance) / 100
-
-    return volatility
+    return cond_vol
