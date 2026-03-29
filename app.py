@@ -69,12 +69,16 @@ def run_pipeline(stock, days, sims, seed=None):
     mu_hmm, sigma_hmm = compute_regime_parameters(regime_returns)
     
     # GARCH VOL
-    try:
-        sigma_garch = forecast_volatility(returns)
-    except:
-        sigma_garch = pd.Series(np.zeros_like(returns), index=returns.index)
-    sigma = float((sigma_hmm + np.mean(sigma_garch)) / 2)
-    
+   try:
+    sigma_garch = forecast_volatility(returns)
+    sigma_garch_value = sigma_garch.mean()
+except Exception as e:
+    print("GARCH error:", e)
+    sigma_garch = pd.Series(np.zeros_like(returns), index=returns.index)
+    sigma_garch_value = 0
+
+# Combine HMM + GARCH volatility
+sigma = float(0.6 * sigma_garch_value + 0.4 * sigma_hmm)
     # MONTE CARLO SIMULATION
     S0 = float(data["Close"].iloc[-1])
     sim = simulate_prices_dynamic(S0, regime_returns, days=days, sims=sims, seed=seed)
